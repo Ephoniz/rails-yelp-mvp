@@ -1,0 +1,21 @@
+<% if notice.present? %>
+  <p class="alert alert-success">
+    <%= notice %>
+  </p>
+<% end %>
+
+<h2><%= @restaurant.name %></h2>
+<%= link_to 'Back', restaurants_path %>
+<%= link_to 'Create review', new_restaurant_review_path(@restaurant)%>
+
+<small><%= @restaurant.category %></small>
+<p><%= @restaurant.address %></p>
+
+<ul>
+  <%@restaurant.reviews.each do  |review|%>
+    <li>
+      <span><%= '⭐️' * review.rating%></span>
+      <p><%=review.content%></p>
+    </li>
+  <% end %>
+</ul>

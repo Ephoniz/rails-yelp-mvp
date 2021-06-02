@@ -1,0 +1,11 @@
+<%= form_for(@restaurant) do |f| %>
+  <div class="form-inputs">
+    Name: <%= f.text_field :name %>
+    Address: <%= f.text_field :address %>
+    Category: <%= f.text_field :category %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
